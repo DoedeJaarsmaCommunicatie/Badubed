@@ -1,0 +1,27 @@
+/** Colors */
+$primary:               #d6b467;
+$secondary:             #8b2436;
+$grey:                  #ebebec;
+$black:                 #010407;
+
+$green:                 #3db434;
+
+$theme-colors: (
+  "primary": #d6b467,
+  "green": #3db434,
+  "black": #010407,
+  "grey": #ebebec,
+  "white": #fff,
+  "secondary": #8b2436
+);
+
+/** Variables redeclare */
+$body-background:       #fff;
+$font-family-base:      "Quicksand";
+
+/** Box Model  */
+$spacer:                2rem;
+
+/** Bootstrap fix for Webpack */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;

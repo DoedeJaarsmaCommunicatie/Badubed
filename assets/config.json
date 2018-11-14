@@ -14,7 +14,7 @@
       "./scripts/navigation.js"
     ]
   },
-  "publicPath": "/wp-content/themes/tjep",
+  "publicPath": "/wp-content/themes/badubed",
   "devUrl": "localhost:9980",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

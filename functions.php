@@ -1,10 +1,10 @@
 <?php
 /**
- * TJEP.nl functions and definitions
+ * Badubed functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package TJEP.nl
+ * @package Badubed
  */
 
 $djc_error = function ($message, $subtitle = '', $title = '') {
@@ -15,7 +15,7 @@ $djc_error = function ($message, $subtitle = '', $title = '') {
 };
 
 /**
- * TJEP required files
+ * Badubed required files
  *
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
@@ -25,4 +25,4 @@ array_map(function ($file) use ($djc_error) {
 	if (!locate_template($file, true, true)) {
 		$djc_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'djc'), $file), 'File not found');
 	}
-}, [ 'helpers', 'setup', 'filters', 'admin', 'ajax', 'shortcodes', 'cron' ]);
+}, [ 'helpers', 'setup', 'filters', 'admin', 'ajax', 'shortcodes', 'cron', 'customizer' ]);

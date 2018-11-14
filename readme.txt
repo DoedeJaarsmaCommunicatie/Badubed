@@ -1,15 +1,15 @@
-=== TJEP.nl ===
+=== Badubed ===
 
-Contributors: automattic
+Contributors: elderbraum
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-Requires at least: 4.5
-Tested up to: 4.8
+Requires at least: 4.9
+Tested up to: 4.9
 Stable tag: 1.0.0
-License: GNU General Public License v2 or later
+License: GNU General Public License v3 or later
 License URI: LICENSE
 
-A starter theme called TJEP.nl.
+A starter theme called Badubed.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-TJEP.nl includes support for Infinite Scroll in Jetpack.
+Badubed includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

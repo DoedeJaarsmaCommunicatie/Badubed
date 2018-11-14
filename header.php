@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package TJEP.nl
+ * @package Badubed
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tjep' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'badubed' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -37,15 +37,15 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$tjep_description = get_bloginfo( 'description', 'display' );
-			if ( $tjep_description || is_customize_preview() ) :
+			$badubed_description = get_bloginfo( 'description', 'display' );
+			if ( $badubed_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $tjep_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $badubed_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tjep' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'badubed' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package TJEP.nl
+ * @package Badubed
  */
 
 get_header();

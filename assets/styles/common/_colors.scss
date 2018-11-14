@@ -1,0 +1,29 @@
+$steps: (10, 20, 30, 40, 50, 60, 70, 80, 90);
+
+@each $key, $value in $theme-colors {
+  @each $step in $steps {
+    .color-#{$key}-light-#{$step} {
+      color: lighten($value, $step);
+    }
+
+    .color-#{$key}-dark-#{$step} {
+      color: darken($value, $step);
+    }
+
+    .color-#{$key}-opaque-#{$step} {
+      color: transparentize($value, $step/100);
+    }
+
+    .bg-#{$key}-light-#{$step} {
+      background-color: lighten($value, $step);
+    }
+
+    .bg-#{$key}-dark-#{$step} {
+      background-color: darken($value, $step);
+    }
+
+    .bg-#{$key}-opaque-#{$step} {
+      background-color: transparentize($value, $step/100);
+    }
+  }
+}

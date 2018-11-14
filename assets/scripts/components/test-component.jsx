@@ -8,7 +8,7 @@ const Title = styled.h1`
 class App extends Component {
     render() {
         return (
-            <Title>Mystagram</Title>
+            <Title>Badubed</Title>
         );
     }
 }

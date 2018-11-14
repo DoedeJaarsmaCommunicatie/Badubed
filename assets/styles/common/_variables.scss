@@ -1,18 +1,12 @@
 /** Colors */
-$primary:               #d6b467;
-$secondary:             #8b2436;
-$grey:                  #ebebec;
-$black:                 #010407;
-
-$green:                 #3db434;
+$primary:               #ffe66d;
+$secondary:             #2f3061;
+$tertiary:              #6ca6c1;
 
 $theme-colors: (
-  "primary": #d6b467,
-  "green": #3db434,
-  "black": #010407,
-  "grey": #ebebec,
-  "white": #fff,
-  "secondary": #8b2436
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary
 );
 
 /** Variables redeclare */

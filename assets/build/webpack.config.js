@@ -45,7 +45,7 @@ let webpackConfig = {
       },
       {
         enforce: 'pre',
-        test: /\.(js|s?[ca]ss)$/,
+        test: /\.(jsx?|s?[ca]ss)$/,
         include: config.paths.assets,
         loader: 'import-glob',
       },
@@ -111,6 +111,11 @@ let webpackConfig = {
           outputPath: 'vendor/',
           name: `${config.cacheBusting}.[ext]`,
         },
+      },
+      {
+        test: /\.jsx?$/,
+        include: config.paths.assets,
+        loader: 'babel',
       },
     ],
   },

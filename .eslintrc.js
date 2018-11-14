@@ -13,6 +13,7 @@ module.exports = {
   },
   "parserOptions": {
     "ecmaFeatures": {
+      "jsx": true,
       "globalReturn": true,
       "generators": false,
       "objectLiteralDuplicateProperties": false,
@@ -28,7 +29,7 @@ module.exports = {
     "import/core-modules": [],
     "import/ignore": [
       "node_modules",
-      "\\.(coffee|scss|css|less|hbs|svg|json)$"
+      "\\.(coffee|scss|css|less|hbs|svg|json|jsx)$"
     ]
   },
   "rules": {

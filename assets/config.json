@@ -12,6 +12,9 @@
     ],
     "navigation":  [
       "./scripts/navigation.js"
+    ],
+    "app-components": [
+      "./scripts/app.js"
     ]
   },
   "publicPath": "/wp-content/themes/badubed",

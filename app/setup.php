@@ -162,9 +162,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Updater code, to automate updates from GitHub
  */
+require_once get_template_directory() . '/updates/plugin-update-checker.php';
+
 $updater = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/DoedeJaarsmaCommunicatie/Badubed/',
-	get_template_directory() . 'functions.php',
+	get_template_directory() . '/functions.php',
 	'djcee'
 );
 

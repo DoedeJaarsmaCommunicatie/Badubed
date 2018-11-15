@@ -6,6 +6,8 @@
  * Time: 10:10
  */
 
+require_once get_template_directory() . '/vendor/autoload.php';
+
 define('BADUBED_VERSION', '1.0.1');
 define('BADUBED_TRANSLATION_STRING', 'badubed');
 
@@ -96,7 +98,7 @@ function badubed_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'badubed_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'badubed_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'badubed_content_width', 0 );
 
@@ -214,3 +216,6 @@ function badubed_register_required_plugins() {
 	
 	tgmpa( $plugins, $config);
 }
+
+
+$timber = new Timber\Timber();

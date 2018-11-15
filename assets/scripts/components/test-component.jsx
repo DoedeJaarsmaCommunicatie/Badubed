@@ -5,15 +5,15 @@ class App extends Component {
 
     constructor(props) {
         super(props)
-        this.dataSet = this.props.data;
+        this.state = { dataSet: this.props.data }
     }
 
     render() {
         const Title = styled.h1`
-        color: ${this.dataSet.color || "goldenrod"};
+        color: ${this.state.dataSet.color || "goldenrod"};
       `;
         return (
-            <Title className={this.props.data.class}>{this.props.data.title}</Title>
+            <Title className={this.state.data.class}>{this.state.data.title}</Title>
         );
     }
 }

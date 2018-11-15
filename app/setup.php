@@ -8,7 +8,7 @@
 
 require_once get_template_directory() . '/vendor/autoload.php';
 
-define('BADUBED_VERSION', '1.0.1');
+define('BADUBED_VERSION', '1.0.4');
 define('BADUBED_TRANSLATION_STRING', 'badubed');
 
 if ( ! function_exists( 'badubed_setup' ) ) :
@@ -145,16 +145,6 @@ add_action( 'wp_enqueue_scripts', 'badubed_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
@@ -177,8 +167,7 @@ $updater->setBranch('master');
 /**
  * Require certain plugins
  */
-
-require_once get_template_directory() . '/app/helpers/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/app/externals/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'badubed_register_required_plugins');
 

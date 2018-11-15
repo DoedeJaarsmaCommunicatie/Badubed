@@ -1,15 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mitch
- * Date: 2018-10-24
- * Time: 10:11
+ * User: Mitch
+ * Date: 15-11-2018
+ * Time: 20:57
  */
 
-/**
- * Add <body> classes
- */
-add_filter('body_class', function (array $classes) {
+add_filter('header_class', function (array $classes) {
 	/** Add page slug if it doesn't exist */
 	if ( is_single() || ( is_page() && ! is_front_page() ) ) {
 		if (!in_array(basename(get_permalink()), $classes)) {
@@ -32,13 +29,3 @@ add_filter('body_class', function (array $classes) {
 	}, $classes);
 	return array_filter($classes);
 });
-
-/**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
-function badubed_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
-}
-add_action( 'wp_head', 'badubed_pingback_header' );

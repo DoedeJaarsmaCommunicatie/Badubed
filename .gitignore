@@ -4,3 +4,4 @@ screenshot.png
 node_modules/
 .idea/
 index.html
+docker-compose.yml

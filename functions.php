@@ -13,6 +13,20 @@ $djc_error = function ($message, $subtitle = '', $title = '') {
 	$message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 	wp_die($message, $title);
 };
+add_filter( 'template_include', 'moustache_include_if_exists', 99 );
+
+function moustache_include_if_exists( $template ) {
+	
+	var_dump($template);
+	if ( is_page( 'portfolio' ) ) {
+		$new_template = locate_template( array( 'portfolio-page-template.php' ) );
+		if ( !empty( $new_template ) ) {
+			return $new_template;
+		}
+	}
+	
+	return $template;
+}
 
 /**
  * Badubed required files

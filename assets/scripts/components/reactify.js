@@ -1,9 +1,9 @@
-import Component from './test-component.jsx';
+import Example from './example-component.jsx'
 
 const Export = {
     "reactors": {
         "#id": {
-            "App": Component,
+            "App": Example,
         },
     },
 }

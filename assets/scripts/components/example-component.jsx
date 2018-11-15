@@ -13,7 +13,7 @@ class App extends Component {
         color: ${this.state.dataSet.color || "goldenrod"};
       `;
         return (
-            <Title className={this.state.data.class}>{this.state.data.title}</Title>
+            <Title className={this.state.dataSet.class}>{this.state.dataSet.title}</Title>
         );
     }
 }

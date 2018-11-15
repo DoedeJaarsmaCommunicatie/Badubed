@@ -46,15 +46,16 @@
     "node": ">= 6.9.4"
   },
   "scripts": {
-    "build": "webpack --progress --config assets/build/webpack.config.js",
-    "build:production": "webpack --progress -p --config assets/build/webpack.config.js",
-    "build:profile": "webpack --progress --profile --json --config assets/build/webpack.config.js",
+    "dev": "webpack --progress --config assets/build/webpack.config.js",
+    "production": "webpack --progress -p --config assets/build/webpack.config.js",
+    "profile": "webpack --progress --profile --json --config assets/build/webpack.config.js",
     "rmdist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/scripts assets/build",
-    "lint:scripts:fix": "eslint assets/scripts assets/build -- --fix",
     "lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "lint:styles:fix": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\" --fix"
+    "lint:scripts:fix": "eslint assets/scripts assets/build -- --fix",
+    "lint:styles:fix": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\" --fix",
+    "lint:fix": "eslint assets/scripts assets/build -- --fix && stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\" --fix"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",

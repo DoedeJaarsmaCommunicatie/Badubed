@@ -13,32 +13,29 @@
 
 </head> {# Opened in base-head.twig #}
 
-{# Base body. Overwrite if needed. #}
-<body class="{{ body_class }}" data-template="base.twig" id="badubed_body_{{ function('get_queried_object_id') }}">
-    <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">{{ _e( 'Skip to content', 'badubed') }}</a>
-    <header {{ header_class }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+{# Base body. Overwrite where needed. #}
+<body {{ fn('body_class') }} data-template="base.twig" id="body_{{ function('get_queried_object_id') }}">
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
+        {{ _e( 'Skip to content', 'badubed') }}
+    </a>
+    <header {{ fn('header_class') }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
         {% block header %}
-
+            {% include 'templates/layouts/helpers/base-header.twig' %}
+        {% endblock %}
+        {% block base_navbar %}
+            {% include 'templates/layouts/helpers/base-navigation.twig' %}
         {% endblock %}
     </header>
-    <main class="main" id="content_{{ function('get_queried_object_id') }}" data-template="base.twig">
+    <main  id="content_{{ fn('get_queried_object_id') }}" {{ fn('post_class', 'main') }} data-template="base.twig">
         {% block content %}
             <!-- This will be overwritten by the content block in the inheriting .twig file -->
         {% endblock %}
     </main>
-    <footer id="footer_{{ function('get_queried_object_id') }}" data-template="base.twig">
+    <footer id="footer_{{ function('get_queried_object_id') }}" {{ fn('footer_class') }} data-template="base.twig">
         {% block footer %}
         {# This can also be overwritten #}
-        <div class="site-info">
-			<a href="{{ __( 'https://wordpress.org/', 'badubed' )|e('esc_url') }}">
-				{# translators: %s: CMS name, i.e. WordPress. #}
-                {{ __( 'Proudly powered by %s', 'badubed' )|format('WordPress')}}
-			</a>
-			<span class="sep"> | </span>
-                {# translators: 1: Theme name, 2: Theme author. #}
-                {{ __( 'Theme: %1$s by %2$s.', 'badubed')|format( 'badubed', '<a href="//doedejaarsma.nl">Doede Jaarsma communicatie</a>' ) }}
-
-		</div><!-- .site-info -->
+            {% include 'templates/layouts/helpers/base-footer.twig' %}
         {% endblock %}
         {{ function('wp_footer')}}
     </footer>

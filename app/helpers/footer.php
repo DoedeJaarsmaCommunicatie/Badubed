@@ -6,8 +6,8 @@
  * Time: 20:59
  */
 
-if( ! function_exists('get_header_class' ) ) :
-	function get_header_class($class = '' ) : array
+if( ! function_exists('get_footer_class' ) ) :
+	function get_footer_class($class = '' ) : array
 	{
 		global $wp_query;
 		
@@ -26,10 +26,10 @@ if( ! function_exists('get_header_class' ) ) :
 		if ( is_search() ) {
 			$classes[] = 'search';
 			$classes[] = $wp_query->posts ? 'search-results' : 'search-no-results';
-        }
+		}
 		
-        if ( is_paged() )
-        	$classes[] = 'paged';
+		if ( is_paged() )
+			$classes[] = 'paged';
 		
 		if ( is_singular() ) {
 			$post_id = $wp_query->get_queried_object_id();
@@ -201,14 +201,14 @@ if( ! function_exists('get_header_class' ) ) :
 		 * @param array $classes An array of body classes.
 		 * @param array $class   An array of additional classes added to the body.
 		 */
-		$classes = apply_filters( 'header_class', $classes, $class );
+		$classes = apply_filters( 'footer_class', $classes, $class );
 		
 		return array_unique( $classes );
 	}
 endif;
 
-if( ! function_exists('header_class' ) ) :
-	function header_class( $class = '' )
+if( ! function_exists('footer_class' ) ) :
+	function footer_class( $class = '' )
 	{
 		echo 'class="' . implode( ' ', get_header_class( $class ) ) . '"';
 		

@@ -9,8 +9,9 @@
 /**
  * Extra helper files
  */
-require_once get_template_directory() . '/app/helpers/header.php';
-require_once get_template_directory() . '/app/helpers/woocommerce.php';
+array_map(function ($file) {
+	require_once get_template_directory() . "/app/helpers/{$file}.php";
+}, [ 'header', 'footer', 'woocommerce' ]);
 
 /**
  * Determine whether to show the sidebar

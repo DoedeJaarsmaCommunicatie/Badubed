@@ -6,6 +6,8 @@
  * Time: 10:11
  */
 
+require_once get_template_directory() . '/app/filters/header.php';
+
 /**
  * Add <body> classes
  */

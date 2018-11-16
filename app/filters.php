@@ -6,7 +6,12 @@
  * Time: 10:11
  */
 
-require_once get_template_directory() . '/app/filters/header.php';
+/**
+ * Extra helper files
+ */
+array_map(function ($file) {
+	require_once get_template_directory() . "/app/filters/{$file}.php";
+}, [ 'header' ]);
 
 /**
  * Add <body> classes

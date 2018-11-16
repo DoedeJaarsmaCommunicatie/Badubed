@@ -11,6 +11,14 @@
  *
  * @package Badubed
  */
+$context = Timber::get_context();
+$post = new \Timber\Post();
+$context['post'] = $post;
+Timber::render( [
+	'templates/page' . $post->post_name . '.twig',
+	'templates/page.twig',
+	'templates/index.twig',
+], $context );
 
 get_header();
 ?>

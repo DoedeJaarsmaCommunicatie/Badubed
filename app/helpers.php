@@ -7,6 +7,12 @@
  */
 
 /**
+ * Extra helper files
+ */
+require_once get_template_directory() . '/app/helpers/header.php';
+require_once get_template_directory() . '/app/helpers/woocommerce.php';
+
+/**
  * Determine whether to show the sidebar
  * @return bool
  */

@@ -1,7 +1,7 @@
 === Badubed ===
 
 Contributors: elderbraum
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, woocommerce-ready, twig
 
 Requires at least: 4.9
 Tested up to: 4.9

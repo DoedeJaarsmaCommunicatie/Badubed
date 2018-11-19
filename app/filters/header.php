@@ -1,28 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mitch
- * Date: 2018-10-24
- * Time: 10:11
+ * User: Mitch
+ * Date: 15-11-2018
+ * Time: 20:57
  */
 
-/**
- * Extra helper files
- */
-array_map(function ($file) {
-	require_once get_template_directory() . "/app/filters/{$file}.php";
-}, [ 'header' ]);
-
-/**
- * Add <body> classes
- */
-add_filter('body_class', function (array $classes) {
+add_filter('header_class', function (array $classes) {
 	/** Add page slug if it doesn't exist */
 	if ( is_single() || ( is_page() && ! is_front_page() ) ) {
 		if (!in_array(basename(get_permalink()), $classes)) {
 			$classes[] = basename(get_permalink());
 		}
 	}
+	
 	/** add hfeed if not single */
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -40,12 +31,12 @@ add_filter('body_class', function (array $classes) {
 	return array_filter($classes);
 });
 
-/**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
-function badubed_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
-}
-add_action( 'wp_head', 'badubed_pingback_header' );
+add_filter( 'timber/context', function ( $context ) {
+	// So here you are adding data to Timber's context object, i.e...
+	$context['foo'] = 'I am some other typical value set in your functions.php file, unrelated to the menu';
+	
+	// Now, in similar fashion, you add a Timber Menu and send it along to the context.
+	$context['menu'] = new \Timber\Menu( 'primary-menu' );
+	
+	return $context;
+} );

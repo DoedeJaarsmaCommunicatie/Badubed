@@ -6,7 +6,9 @@
  * Time: 10:10
  */
 
-define('BADUBED_VERSION', '1.0.1');
+require_once get_template_directory() . '/vendor/autoload.php';
+
+define('BADUBED_VERSION', '1.0.4');
 define('BADUBED_TRANSLATION_STRING', 'badubed');
 
 if ( ! function_exists( 'badubed_setup' ) ) :
@@ -96,7 +98,7 @@ function badubed_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'badubed_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'badubed_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'badubed_content_width', 0 );
 
@@ -143,16 +145,6 @@ add_action( 'wp_enqueue_scripts', 'badubed_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
@@ -175,8 +167,7 @@ $updater->setBranch('master');
 /**
  * Require certain plugins
  */
-
-require_once get_template_directory() . '/app/helpers/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/app/externals/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'badubed_register_required_plugins');
 
@@ -185,7 +176,7 @@ function badubed_register_required_plugins() {
 		[
 			'name'               => 'DJC Extending Elementor', // The plugin name.
 			'slug'               => 'djcee', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/app/helpers/plugins/djcee.zip', // The plugin source.
+			'source'             => get_template_directory() . '/app/externals/plugins/djcee.zip', // The plugin source.
 			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -214,3 +205,6 @@ function badubed_register_required_plugins() {
 	
 	tgmpa( $plugins, $config);
 }
+
+
+$timber = new Timber\Timber();

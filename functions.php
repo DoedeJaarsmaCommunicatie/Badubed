@@ -7,6 +7,8 @@
  * @package Badubed
  */
 
+
+
 $djc_error = function ($message, $subtitle = '', $title = '') {
 	$title = $title ?: __('DJC &rsaquo; Error', 'djc');
 	$footer = '<a href="https://doedejaarsma.nl/contact/">doedejaarsma/contact</a>';

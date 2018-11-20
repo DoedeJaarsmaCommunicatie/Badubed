@@ -126,6 +126,8 @@ add_action( 'widgets_init', 'badubed_widgets_init' );
 function badubed_scripts() {
 	wp_enqueue_style( 'badubed-style', get_stylesheet_uri() );
 	
+	wp_enqueue_style( 'badubed-main-style', get_template_directory() . '/dist/styles/main.css' );
+	
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/scripts/main.js', ['jquery'], null, true );
 	
 	wp_enqueue_script( 'badubed-navigation', get_template_directory_uri() . '/dist/scripts/navigation.js', [], '20151215', true );

@@ -1,7 +1,7 @@
 /** Colors */
-$primary:               #ffe66d;
-$secondary:             #2f3061;
-$tertiary:              #6ca6c1;
+$primary:               #f66663; // ffe66d
+$secondary:             #ec6584; // 2f3061
+$tertiary:              #747474; // 6ca6c1
 
 $theme-colors: (
   "primary": $primary,
@@ -11,7 +11,7 @@ $theme-colors: (
 
 /** Variables redeclare */
 $body-background:       #fff;
-$font-family-base:      "Quicksand";
+$font-family-base:      "Rubik";
 
 /** Box Model  */
 $spacer:                2rem;

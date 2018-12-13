@@ -1,4 +1,6 @@
-$steps: (10, 20, 30, 40, 50, 60, 70, 80, 90);
+$steps: (5, 10, 20, 30, 40, 50, 60, 70, 80, 90);
+// Overwrite to `true` to use state specific colors and hues
+$color-states: false !default;
 
 @each $key, $value in $theme-colors {
   @each $step in $steps {
@@ -24,6 +26,80 @@ $steps: (10, 20, 30, 40, 50, 60, 70, 80, 90);
 
     .bg-#{$key}-opaque-#{$step} {
       background-color: transparentize($value, $step/100);
+    }
+
+    @if $color-states {
+      .hover\:color-#{$key}-light-#{$step}:hover {
+        color: lighten($value, $step) !important;
+      }
+
+      .focus\:color-#{$key}-light-#{$step}:focus {
+        color: lighten($value, $step) !important;
+      }
+
+      .active\:color-#{$key}-light-#{$step}:active {
+        color: lighten($value, $step) !important;
+      }
+
+      .hover\:color-#{$key}-dark-#{$step}:hover {
+        color: darken($value, $step) !important;
+      }
+
+      .focus\:color-#{$key}-dark-#{$step}:focus {
+        color: darken($value, $step) !important;
+      }
+
+      .active\:color-#{$key}-dark-#{$step}:active {
+        color: darken($value, $step) !important;
+      }
+
+      .hover\:color-#{$key}-opaque-#{$step}:hover {
+        color: transparentize($value, $step/100) !important;
+      }
+
+      .focus\:color-#{$key}-opaque-#{$step}:focus {
+        color: transparentize($value, $step/100) !important;
+      }
+
+      .active\:color-#{$key}-opaque-#{$step}:active {
+        color: transparentize($value, $step/100) !important;
+      }
+
+      .hover\:bg-#{$key}-light-#{$step}:hover {
+        color: lighten($value, $step) !important;
+      }
+
+      .focus\:bg-#{$key}-light-#{$step}:focus {
+        color: lighten($value, $step) !important;
+      }
+
+      .active\:bg-#{$key}-light-#{$step}:active {
+        color: lighten($value, $step) !important;
+      }
+
+      .hover\:bg-#{$key}-dark-#{$step}:hover {
+        color: darken($value, $step) !important;
+      }
+
+      .focus\:bg-#{$key}-dark-#{$step}:focus {
+        color: darken($value, $step) !important;
+      }
+
+      .active\:bg-#{$key}-dark-#{$step}:active {
+        color: darken($value, $step) !important;
+      }
+
+      .hover\:bg-#{$key}-opaque-#{$step}:hover {
+        color: transparentize($value, $step/100) !important;
+      }
+
+      .focus\:bg-#{$key}-opaque-#{$step}:focus {
+        color: transparentize($value, $step/100) !important;
+      }
+
+      .active\:bg-#{$key}-opaque-#{$step}:active {
+        color: transparentize($value, $step/100) !important;
+      }
     }
   }
 }

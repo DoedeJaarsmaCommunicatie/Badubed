@@ -1,17 +1,15 @@
 /** Colors */
-$primary:               #f66663; // ffe66d
-$secondary:             #ec6584; // 2f3061
-$tertiary:              #747474; // 6ca6c1
+$primary:               #ef8716; // ffe66d
+$secondary:             #f4f4f4; // 2f3061
 
 $theme-colors: (
   "primary": $primary,
-  "secondary": $secondary,
-  "tertiary": $tertiary
+  "secondary": $secondary
 );
 
 /** Variables redeclare */
 $body-background:       #fff;
-$font-family-base:      "Rubik";
+$font-family-base:      "Roboto";
 
 /** Box Model  */
 $spacer:                2rem;
@@ -19,3 +17,6 @@ $spacer:                2rem;
 /** Bootstrap fix for Webpack */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+/** overwriting specials */
+$color-states: true;

@@ -7,7 +7,12 @@
  * @package Badubed
  */
 
-$templates          = [ 'templates/search.twig', 'templates/index.twig' ];
+$templates          = [
+	'templates/single-' .$post->post_type . '-' . $post->slug . '.twig',
+	'templates/single-' .$post->post_type . '.twig',
+	'templates/single.twig',
+	'templates/index.twig'
+];
 
 $context            = \Timber\Timber::get_context();
 $context['post']    = new \Timber\Post();

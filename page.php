@@ -16,6 +16,7 @@ $post = new \Timber\Post();
 $context['post'] = $post;
 Timber::render( [
 	'templates/page' . $post->post_name . '.twig',
+	'templates/page' . $post->post_type . '.twig',
 	'templates/page.twig',
 	'templates/index.twig',
 ], $context );

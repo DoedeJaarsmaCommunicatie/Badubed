@@ -8,7 +8,7 @@
 
 require_once get_template_directory() . '/vendor/autoload.php';
 
-define('BADUBED_VERSION', '1.0.4');
+define('BADUBED_VERSION', '1.0.14');
 define('BADUBED_TRANSLATION_STRING', 'badubed');
 
 if ( ! function_exists( 'badubed_setup' ) ) :
@@ -210,3 +210,9 @@ function badubed_register_required_plugins() {
 
 
 $timber = new Timber\Timber();
+
+
+add_filter('timber/context', function ($context) {
+	$context['device'] = new Mobile_Detect();
+	return $context;
+});

@@ -1,15 +1,13 @@
 /** Colors */
-$primary:               #ef8716; // ffe66d
-$secondary:             #f4f4f4; // 2f3061
+$green:                 #97b79b; // ffe66d
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary
+  'primary': $green,
 );
 
 /** Variables redeclare */
 $body-background:       #fff;
-$font-family-base:      "Roboto";
+$font-family-base:      "Montserrat";
 
 /** Box Model  */
 $spacer:                2rem;

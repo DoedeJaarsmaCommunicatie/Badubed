@@ -4,7 +4,8 @@
     "require": {
         "php": "^7.2",
         "twig/twig": "2.x-dev",
-        "timber/timber": "dev-master"
+        "timber/timber": "dev-master",
+        "mobiledetect/mobiledetectlib": "dev-master"
     },
     "license": "gnugpl3-or-higher",
     "authors": [

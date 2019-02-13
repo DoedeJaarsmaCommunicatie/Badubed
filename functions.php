@@ -7,8 +7,6 @@
  * @package Badubed
  */
 
-
-
 $djc_error = function ($message, $subtitle = '', $title = '') {
 	$title = $title ?: __('DJC &rsaquo; Error', 'djc');
 	$footer = '<a href="https://doedejaarsma.nl/contact/">doedejaarsma/contact</a>';
@@ -28,3 +26,10 @@ array_map(function ($file) use ($djc_error) {
 		$djc_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'djc'), $file), 'File not found');
 	}
 }, [ 'helpers', 'setup', 'filters', 'admin', 'ajax', 'shortcodes', 'cron', 'customizer' ]);
+
+
+
+add_filter('timber/context', function ($context) {
+	$context['device'] = new Mobile_Detect();
+	return $context;
+});

@@ -4,6 +4,12 @@ $color-states: false !default;
 
 @each $key, $value in $theme-colors {
   @each $step in $steps {
+    :root {
+      --#{$key}-light-#{$step}: #{lighten($value, $step)};
+      --#{$key}-dark-#{$step}: #{darken($value, $step)};
+      --#{$key}-opaque-#{$step}: #{transparentize($value, $step/100)};
+    }
+
     .color-#{$key}-light-#{$step} {
       color: lighten($value, $step);
     }
